@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodeklubben (server)</title>
+    
+<link href="/vendor2.d68392989297b87f74cc.css" rel="stylesheet"></head>
+<body>
+    <div id="app"><div><div data-reactroot="" data-reactid="1" data-react-checksum="-2094656469"><div style="background-color:#B1DAAE;border-radius:5px;height:40px;padding:5px;" data-reactid="2"><p data-reactid="3"><a href="/" data-reactid="4">Front Page</a><span data-reactid="5"><!-- react-text: 6 --> / <!-- /react-text --><a href="/scratch" data-reactid="7">scratch</a></span><span data-reactid="8"><!-- react-text: 9 --> / <!-- /react-text --><a href="/scratch/lag_ditt_eget_monster/monster-ben" class="active" data-reactid="10">monster-ben</a></span></p></div><div data-reactid="11"><h1 data-reactid="12"><!-- react-text: 13 -->Monster - Ben<!-- /react-text --><!-- react-text: 14 --> - Level <!-- /react-text --></h1><p data-reactid="15"><i data-reactid="16"><!-- react-text: 17 -->av <!-- /react-text --><!-- react-text: 18 -->Oversatt fra [Code Club UK](//codeclub.org.uk)<!-- /react-text --></i></p><div data-reactid="19"><section class="check" id="sjekkliste">
+<h2 class="check" id="sjekkliste">Sjekkliste</h2>
+<ul>
+<li>
+<p>Ved å bruke to figurer til bein kan vi få monsteret vårt til å
+gå. For å gjøre dette lager vi en <strong>variabel</strong> som bytter mellom de
+to tilstandene, én for når beinet peker forover og en annen når
+beinet går bakover (vi bytter om på tilstandene for det andre
+beinet). For å gjøre dette må vi først lage en <code class="blockdata">steg</code>
+variabel, så hver gang melding om bevegelse mottas, <strong>øker vi
+variabelen med 1</strong>. Hvis variablen går høyere enn 1 (vi kan teste
+dette med større enn operatøren <code class="blockoperators">_ &gt; _</code>) nullstiller vi
+den.</p>
+<pre><code class="language-blocks">når grønt flagg klikkes
+sett <span class="hljs-string">[hastighet v]</span> til <span class="hljs-string">[5]</span>
+sett <span class="hljs-string">[steg v]</span> til <span class="hljs-string">[0]</span>
+
+når jeg mottar <span class="hljs-string">[flyttet venstre v]</span>
+endre <span class="hljs-string">[steg v]</span> med (<span class="hljs-number">1</span>)
+hvis &lt;(steg) &gt; <span class="hljs-string">[1]</span>&gt;
+    sett <span class="hljs-string">[steg v]</span> til <span class="hljs-string">[0]</span>
+slutt
+
+når jeg mottar <span class="hljs-string">[flyttet høyre v]</span>
+endre <span class="hljs-string">[steg v]</span> med (<span class="hljs-number">1</span>)
+hvis &lt;(steg) &gt; <span class="hljs-string">[1]</span>&gt;
+    sett <span class="hljs-string">[steg v]</span> til <span class="hljs-string">[0]</span>
+slutt
+</code></pre>
+</li>
+<li>
+<p>Nå kan vi sette beina i bevegelse ved å sjekke vår
+<code class="blockdata">steg</code>-variabel. <strong>Når variabelen blir satt til null</strong>
+kan vi bytte retning på beinet (her har vi brukt en fast
+<code class="blockmotion">retning</code> for å hindre at beinet går amok hvis
+variabelen og graden på vinkelen ikke stemmer, men kanskje vil du at
+monstret skal gjøre det!). Ikke glem å flytte beina langs kroppen
+ved å bruke <code class="blockdata">hastighet</code>-variabelen.</p>
+<pre><code class="language-blocks">når jeg mottar <span class="hljs-string">[flyttet høyre v]</span>
+endre x med (hastighet)
+hvis &lt;(steg) = <span class="hljs-string">[0]</span>&gt;
+    pek i retning (<span class="hljs-number">180</span> v)
+ellers
+    pek i retning (<span class="hljs-number">165</span> v)
+slutt
+
+når jeg mottar <span class="hljs-string">[flyttet venstre v]</span>
+endre x med ((hastighet) * <span class="hljs-string">[-1]</span>)
+hvis &lt; (steg) = <span class="hljs-string">[1]</span> &gt;
+    pek i retning (<span class="hljs-number">165</span> v)
+ellers
+    pek i retning (<span class="hljs-number">180</span> v)
+slutt
+</code></pre>
+</li>
+</ul>
+<p><strong>Du kan bruke samme type handling for å lage armer som vinker, eller
+fuglevinger som flakser.</strong></p>
+</section>
+</div></div></div></div></div>
+<script type="text/javascript" src="/manifest.6ea44eeac19bc3e880c0.js"></script><script type="text/javascript" src="/vendor.6d5fa98442bff232d8d6.js"></script><script type="text/javascript" src="/main.effc9f6975558c5cacd0.js"></script><script type="text/javascript" src="/vendor2.d68392989297b87f74cc.js"></script></body>
+</html>

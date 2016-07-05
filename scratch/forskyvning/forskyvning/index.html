@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodeklubben (server)</title>
+    
+<link href="/vendor2.d68392989297b87f74cc.css" rel="stylesheet"></head>
+<body>
+    <div id="app"><div><div data-reactroot="" data-reactid="1" data-react-checksum="1181613197"><div style="background-color:#B1DAAE;border-radius:5px;height:40px;padding:5px;" data-reactid="2"><p data-reactid="3"><a href="/" data-reactid="4">Front Page</a><span data-reactid="5"><!-- react-text: 6 --> / <!-- /react-text --><a href="/scratch" data-reactid="7">scratch</a></span><span data-reactid="8"><!-- react-text: 9 --> / <!-- /react-text --><a href="/scratch/forskyvning/forskyvning" class="active" data-reactid="10">forskyvning</a></span></p></div><div data-reactid="11"><h1 data-reactid="12"><!-- react-text: 13 -->Forskyving<!-- /react-text --><!-- react-text: 14 --> - Level <!-- /react-text --><!-- react-text: 15 -->1<!-- /react-text --></h1><p data-reactid="16"><i data-reactid="17"><!-- react-text: 18 -->av <!-- /react-text --><!-- react-text: 19 -->Carl A. Myrland<!-- /react-text --></i></p><div data-reactid="20"><section class="tips" id="laeringsmal">
+<h2 class="tips" id="laeringsmal">Læringsmål</h2>
+<ul>
+<li>beskrive og gjennomføre spegling, rotasjon og parallellforskyving</li>
+<li>beskrive plassering og flytting i rutenett, på kart og i koordinatsystem, med og utan digitale hjelpemiddel, og bruke koordinatar til å berekne avstandar parallelt med aksane i eit koordinatsystem</li>
+</ul>
+</section>
+<section class="intro" id="introduksjon">
+<h1 class="intro" id="introduksjon">Introduksjon</h1>
+<p>Denne oppgaven forutsetter at du har fullført oppgave 1 i denne oppgaveserien.</p>
+<p>Vi skal nå se på hvordan vi kan flytte en figur rundt på skjermen uten at den endrer form, størrelse eller retning. Det kalles en forskyvning!</p>
+<figure>Aller først henter vi frem <code>Hattulf</code> fra forrige oppgave. Trykk på &quot;mine ting&quot; og velg å &quot;se inni&quot; den forrige oppgaven din.</figure>
+<figure>Vi skal la rotasjonen ligge en liten stund, så vi kobler ganske enkelt &quot;Når grønt flagg klikkes&quot;-boksen fra resten av koden.
+Ikke slett koden, vi skal bruke den igjen senere!</figure>
+</section>
+<section class="activity" id="steg-1-vi-forskyver-hattulf">
+<h1 class="activity" id="steg-1-vi-forskyver-hattulf">Steg 1: Vi forskyver Hattulf</h1>
+<figure>Vi må huske at for en datamaskin foregår all bevegelse på skjermen i et koordinatsystem. Koordinatene for bevegelse i lengderetning, altså fra høyre til venstre, kaller vi x-koordinater.
+Vil du bevege deg i høyden må vi endre på y-koordinatene.</figure>
+<p>Vi begynner med å endre på X-koordinatene</p>
+<section class="check" id="sjekkliste">
+<h2 class="check" id="sjekkliste">Sjekkliste</h2>
+<ul>
+<li>
+<p>Vi henter en <code>endre x med</code>-{.blockmotion} fra <code class="blockmotion">Bevegelse</code> og kobler den til <code class="blockcontrol">Når grønt flagg klikkes</code></p>
+</li>
+<li>
+<p>Du kan endre verdien med så mye som du selv ønsker.</p>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år <span class="hljs-keyword">gr</span>ønt flagg klikkes
+endre x med ()
+</code></pre>
+</li>
+<li>
+<p>Det blir litt slitsomt å holde kontroll på hvor hatten er hele tiden. Derfor legger vi til en tastekommando som får hatten tilbake til utgangspunktet, koordinatet (0,0):</p>
+<pre><code class="language-blocks">når [o] trykkes
+gå til x: (<span class="hljs-number">0</span>) y: (<span class="hljs-number">0</span>)
+</code></pre>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet">
+<h2 class="flag" id="test-prosjektet">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>Hva skjer?</li>
+<li>Husk å trykke &quot;o&quot; om <code>Hattulf</code> forsvinner ut av bildekanten</li>
+<li>Utfordring: Ved å bruke det du kan om bevegelser på ei tallinje, kan du få <code>Hattulf</code> til å gå til venstre på skjermen ved å endre på verdien til tallet du endrer x med. Får du det til?</li>
+</ul>
+</section>
+</section>
+<section class="activity" id="steg-2-flytte-langs-y-aksen">
+<h1 class="activity" id="steg-2-flytte-langs-y-aksen">Steg 2: Flytte <code>Hattulf</code> langs y-aksen.</h1>
+<figure>Du blir kanskje ikke veldig overrasket over at vi nå skal benytte oss av <code class="blockmotion">endre y med ()</code>.</figure>
+<ul>
+<li>
+<p>Nå skal kodeblokken din se slik ut:</p>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år <span class="hljs-keyword">gr</span>ønt flagg klikkes
+endre y med ()
+</code></pre>
+</li>
+</ul>
+</section>
+</div></div></div></div></div>
+<script type="text/javascript" src="/manifest.6ea44eeac19bc3e880c0.js"></script><script type="text/javascript" src="/vendor.6d5fa98442bff232d8d6.js"></script><script type="text/javascript" src="/main.effc9f6975558c5cacd0.js"></script><script type="text/javascript" src="/vendor2.d68392989297b87f74cc.js"></script></body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodeklubben (server)</title>
+    
+<link href="/vendor2.d68392989297b87f74cc.css" rel="stylesheet"></head>
+<body>
+    <div id="app"><div><div data-reactroot="" data-reactid="1" data-react-checksum="1921196811"><div style="background-color:#B1DAAE;border-radius:5px;height:40px;padding:5px;" data-reactid="2"><p data-reactid="3"><a href="/" data-reactid="4">Front Page</a><span data-reactid="5"><!-- react-text: 6 --> / <!-- /react-text --><a href="/scratch" data-reactid="7">scratch</a></span><span data-reactid="8"><!-- react-text: 9 --> / <!-- /react-text --><a href="/scratch/orkenlop/orkenlop" class="active" data-reactid="10">orkenlop</a></span></p></div><div data-reactid="11"><h1 data-reactid="12"><!-- react-text: 13 -->Ørkenløp<!-- /react-text --><!-- react-text: 14 --> - Level <!-- /react-text --><!-- react-text: 15 -->2<!-- /react-text --></h1><p data-reactid="16"><i data-reactid="17"><!-- react-text: 18 -->av <!-- /react-text --><!-- react-text: 19 -->Oversatt fra [Code Club UK](//codeclub.org.uk)<!-- /react-text --></i></p><div data-reactid="20"><section class="intro" id="introduksjon">
+<h1 class="intro" id="introduksjon">Introduksjon</h1>
+<p>Dette er et spill for to, der en papegøye og en løvinne kjemper om å
+komme først gjennom ørkenen. Hver spiller må trykke en tast så fort og
+ofte som mulig for å flytte figuren sin, og den som kommer først til
+kanten av skjermen vinner.</p>
+<figure><img src="/_/oppgaver/src/scratch/orkenlop/orkenlop.241bda.png" alt="" /></figure>
+</section>
+<section class="activity" id="steg-1-lag-en-scene-og-legg-til-figurer">
+<h1 class="activity" id="steg-1-lag-en-scene-og-legg-til-figurer">Steg 1: Lag en scene og legg til figurer</h1>
+<figure><em>Vi begynner med å få på plass bakgrunnen og figurene.</em></figure>
+<section class="check" id="sjekkliste">
+<h2 class="check" id="sjekkliste">Sjekkliste</h2>
+<ul>
+<li>
+<p>Klikk på Scene og velg en ferdig bakgrunn,
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAWCAIAAAC63aDhAAAAA3NCSVQICAjb4U/gAAAAGXRFWHRTb2Z0d2FyZQBnbm9tZS1zY3JlZW5zaG907wO/PgAAASNJREFUOI3llK9uwzAQxt1pwDeWspnmFQI7uLKU1X2DFa6oe41mrGMpq8fisYbV0GbzoNmsog6aDnjKouVPF6mVKvVDJ+u7n+/OOvfsboeOpKtjgc6YdV1EabrSWnfNJ4TMZo9/Wc656fQhDMNOrPn8qaauqj6tzTc5YByPYgA4yG2bV77JtdZSKSVV+QLnXGdWIQzYB1LKZJGk6arW1tYjpePt9vYGIIoiD2LsFSFkjGFrRif0MOtrvw/6fYQQAAyH9/6QrZlUv51KpQghg7tBGyvLuBBiFMeFzznHM14G/Tg5L3qvYWn9IYTwvnetJ3SMAZbLF2tt7RA4f2tkeZCXMWaRPAdB0ATyJTeyqtam56/Vue72aVj/2biqylm9C/ijvwFjEHjPhVu+swAAAABJRU5ErkJggg==" alt="velg en ferdig bakgrunn" />. Velg
+<code>Natur/desert</code>.</p>
+</li>
+<li>
+<figure>Fjern katten ved å høyreklikke på figuren og velg <code>slett</code>.</figure>
+</li>
+<li>
+<p>Legg til en ny figur ved å trykke på
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAATCAYAAAB2pebxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAZNJREFUOE+dk0lPwkAUx/tBcTmw6QELmojWBTFuKILKIkuECiZqtAh6QTyBQkgwMRzkKmfOnJ99ozOZsW1KnORlZtr3fv2/pRIASHamqiXdxdrPFoDBjqkZ6HS7liBbSPQ4BgiR/YH/QdLpDAFQw7tZWqZK2p0OuNxeAUBBqdS5AWSAFIuXpsG8otrjkwASIG/tti0AYaiST0t61QPpg+CqMhEEQdc3tySu0XgBqVqtkcBCQZ0YQNWgIjSSDp8vnt2eOfgcDECrPICytgGO6Vlwe+fJ/tc3mUz/QCJHUeFlqXyFUtkajUaA1my1QA4sCb4YzwrLtxQhaDu7ewykaRXIZHMQi58ySL3+TOoidAelKso6sa/hkKQ0Ho8JqNd7J3smm9endxESiRRriAAJhbdJPWgAgqgqPOPCu0/2W88JSqvoxXTqFY/FT6DZbBE1aAhWS2U44xTQ0bD8AX0LsqEToa2wYeQNNeGn8CByyCDLwRXTYFslufwFOF0eZnjnP8KfLdO5u9dg81f+vq7qo9+3hHwDiSt9l+qqTUcAAAAASUVORK5CYII=" alt="velg figur fra biblioteket" />. Velg
+<code>Dyr/Lionness</code>.</p>
+</li>
+<li>
+<p>Legg så til enda en ny figur: velg <code>Dyr/Parrot</code>. Krymp figuren slik
+at den er omtrent like stor som løvinnen ved å bruke
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAIAAAD9MqGbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAALVJREFUOE+tk7EOwjAMRPv/31BVqAN06IYq8SsVQ8VAOwB7tvCkq9wQkKqaRhkS++5sx05RVrVvFz4arJn5eL76/rqqAgakYDMTU4xR5EN9PDWtqXDGwjXFLMzUgep9nIw5DDdlZNIfMXWRmxVCMCY0GbNylhciJQOBM6ZoLLxKO49JPUpMuHN3AYHRsqCEtP7fXUkRkvjef/czk9wW01+n/239/bQp2TZD/rn1/5XV/7XnJLwBdij0j5HCDzIAAAAASUVORK5CYII=" alt="krymp" />.</p>
+</li>
+</ul>
+</section>
+</section>
+<section class="activity" id="steg-2-la-lovinnen-og-papegoyen-bevege-seg">
+<h1 class="activity" id="steg-2-la-lovinnen-og-papegoyen-bevege-seg">Steg 2: La løvinnen og papegøyen bevege seg</h1>
+<figure><em>Vi vil at figurene skal bevege seg når du trykker på en knapp.</em></figure>
+<section class="check" id="sjekkliste-2">
+<h2 class="check" id="sjekkliste-2">Sjekkliste</h2>
+<ul>
+<li>
+<p>Velg først løvefiguren og få den til å <code class="blockmotion">gå 4 steg</code> når
+du trykker <code>L</code> tasten.</p>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år [<span class="hljs-keyword">l</span> v] trykkes
+<span class="hljs-keyword">g</span>å (4) steg
+</code></pre>
+</li>
+<li>
+<p>Velg så papegøyefiguren og la den <code class="blockmotion">gå 4 steg</code> når du
+trykker <code>A</code> tasten.</p>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år [a v] trykkes
+<span class="hljs-keyword">g</span>å (4) steg
+</code></pre>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet">
+<h2 class="flag" id="test-prosjektet">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>Beveger løvinnen og papegøyen seg over skjermen når du trykker på
+<code>A</code> og <code>L</code> tastene?</li>
+</ul>
+</section>
+</section>
+<section class="activity" id="steg-3-start-kapplopet">
+<h1 class="activity" id="steg-3-start-kapplopet">Steg 3: Start kappløpet</h1>
+<p><em>Nå må vi kjøre i gang kappløpet og kåre en vinner. Vi begynner med å
+lage startknapp.</em></p>
+<section class="check" id="sjekkliste-3">
+<h2 class="check" id="sjekkliste-3">Sjekkliste</h2>
+<ul>
+<li>
+<p>Legg til en ny figur. Velg <code>Ting/Button3</code>. Flytt den til midten av
+scenen.</p>
+</li>
+<li>
+<p>Klikk på <code>Drakter</code>-fanen og verktøyet <code>T</code> for å legge til
+tekst. Trykk på venstre kant av knappen for å legge til et tekstfelt
+og skriv inn teksten <code>Start</code>. Du kan flytte på teksten ved å trykke
+en gang på den, og endre innhold ved å dobbeltklikke.</p>
+</li>
+<li>
+<p>Legg nå til et skript som viser figuren når spillet starter:</p>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år <span class="hljs-keyword">gr</span>ønt flagg klikkes
+vis
+</code></pre>
+</li>
+<li>
+<p>I tillegg vil vi at knappen først teller ned fra 3, sier <code>LØP!</code> og
+deretter blir skjult når den klikkes. Dette ordner du med følgende
+skript:</p>
+<pre><code class="language-blocks">når denne figuren klikkes
+si [<span class="hljs-number">3</span>] <span class="hljs-tag">i</span> (<span class="hljs-number">1</span>) sekunder
+si [<span class="hljs-number">2</span>] <span class="hljs-tag">i</span> (<span class="hljs-number">1</span>) sekunder
+si [<span class="hljs-number">1</span>] <span class="hljs-tag">i</span> (<span class="hljs-number">1</span>) sekunder
+si [LØP!] <span class="hljs-tag">i</span> (<span class="hljs-number">1</span>) sekunder
+skjul
+</code></pre>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet-2">
+<h2 class="flag" id="test-prosjektet-2">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget, og deretter på startknappen.</strong></figure>
+<ul>
+<li>
+<p>Teller knappen ned?</p>
+</li>
+<li>
+<figure>Sier den <code>LØP!</code>?</figure>
+</li>
+<li>
+<p>Blir den borte?</p>
+</li>
+</ul>
+<figure>Vi ønsker at figurene bare beveger seg etter at kappløpet er startet
+og vi ønsker å vite når kappløpet er over.</figure>
+</section>
+<section class="check" id="sjekkliste-4">
+<h2 class="check" id="sjekkliste-4">Sjekkliste</h2>
+<ul>
+<li>
+<p>For å vite når kappløpet har startet og sluttet lager vi en variabel
+med navnet <code class="blockdata">kappløp</code>. Variabelen skal være tilgjengelig
+<code>for alle figurer</code>. Fjern avhukingen foran variabelen, slik at den
+ikke vises på scenen.</p>
+</li>
+<li>
+<p>Sett <code class="blockdata">kappløp</code> til 0 når spillet startes ved å forandre
+<code class="blockevents">når grønt flagg klikkes</code>-skriptet slik:</p>
+<pre><code class="language-blocks">når grønt flagg klikkes
+vis
+sett <span class="hljs-string">[kappløp v]</span> til <span class="hljs-string">[0]</span>
+</code></pre>
+</li>
+<li>
+<p>Når nedtellingen er ferdig og løpet begynner, forandrer vi
+<code class="blockdata">kappløp</code>-verdien til 1. Dette gjør du ved å legge til
+klossen <code class="blockdata">Sett kappløp til 1</code> under <code class="blocklooks">si 1 i 1 sekunder</code> i skriptet som starter med <code class="blockevents">når denne figuren klikkes</code>.</p>
+</li>
+<li>
+<p>Nå må vi lage en regel som sier at figurene bare får lov til å
+bevege seg etter at løpet har startet – det vil si når
+<code class="blockdata">kappløp</code> har verdien 1. Klikk først på papegøyen. Så
+endrer du:</p>
+<pre><code class="language-blocks">når <span class="hljs-string">[a v]</span> trykkes
+hvis &lt;(kappløp) = <span class="hljs-string">[1]</span>&gt;
+    gå (<span class="hljs-number">4</span>) steg
+slutt
+</code></pre>
+</li>
+<li>
+<p>Gjenta det samme for løvinnen.</p>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet-3">
+<h2 class="flag" id="test-prosjektet-3">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>Kan løvinnen og papegøyen bare flytte seg når nedtellingen er
+ferdig?</li>
+</ul>
+</section>
+</section>
+<section class="activity" id="steg-4-avslutte-kapplopet">
+<h1 class="activity" id="steg-4-avslutte-kapplopet">Steg 4: Avslutte kappløpet</h1>
+<p><em>Nå vil vi finne ut hvem som vinner kappløpet, og i tillegg gjøre
+klart for en ny runde.</em></p>
+<section class="check" id="sjekkliste-5">
+<h2 class="check" id="sjekkliste-5">Sjekkliste</h2>
+<ul>
+<li>
+<figure>Legg til en kloss i papegøyens skript som sier <code class="blockdata">sett kappløp til 0</code> hvis figuren berører kanten av skjermen:</figure>
+<pre><code class="language-blocks">når <span class="hljs-string">[a v]</span> trykkes
+hvis &lt;(kappløp) = <span class="hljs-string">[1]</span>&gt;
+    gå (<span class="hljs-number">4</span>) steg
+    hvis &lt;berører <span class="hljs-string">[kant v]</span>?&gt;
+        sett <span class="hljs-string">[kappløp v]</span> til <span class="hljs-string">[0]</span>
+    slutt
+slutt
+</code></pre>
+</li>
+<li>
+<p>Spill så inn en lyd som skal spilles av hvis papegøyen vinner.</p>
+<p>Trykk på <code>Lyder</code>-fanen og deretter mikrofon-ikonet og spill inn en
+morsom trudelutt! Opptaket starter når du har klikket på rundingen
+slik at den blir rød. Klikk stopp (firkanten) når du er ferdig, og
+gi lyden et navn – for eksempel <code>Polly</code>. Noen nettlesere kan
+spørre om tillatelse til å spille inn lyd. Hvis du ikke ønsker
+dette, bruk lydene som følger med figurene.</p>
+</li>
+<li>
+<figure>Deretter legger du til klossene som spiller lyden og lar papegøyen
+fortelle at den vant:</figure>
+<pre><code class="language-blocks">når <span class="hljs-string">[a v]</span> trykkes
+hvis &lt;(kappløp) = <span class="hljs-string">[1]</span>&gt;
+    gå (<span class="hljs-number">4</span>) steg
+    hvis &lt;berører <span class="hljs-string">[kant v]</span>?&gt;
+        sett <span class="hljs-string">[kappløp v]</span> til <span class="hljs-string">[0]</span>
+        spill lyden <span class="hljs-string">[Polly v]</span>
+        si <span class="hljs-string">[Polly vinner!]</span> i (<span class="hljs-number">3</span>) sekunder
+    slutt
+slutt
+</code></pre>
+</li>
+<li>
+<p>Gjør tilsvarende for løvinnen.</p>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet-4">
+<h2 class="flag" id="test-prosjektet-4">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>
+<p>Kan du trykke på startknappen og deretter bevege dyrene med tastene
+<code>A</code> og <code>L</code>?</p>
+</li>
+<li>
+<p>Kommer riktig vinnerlyd og melding opp på skjermen?</p>
+</li>
+</ul>
+</section>
+</section>
+<section class="activity" id="steg-5-nullstill-spillet">
+<h1 class="activity" id="steg-5-nullstill-spillet">Steg 5: Nullstill spillet</h1>
+<p><em>Når kappløpet er over må vi fortelle de andre figurene at spillet er
+over og nullstille spillet, slik at er klart for en ny runde.</em></p>
+<section class="check" id="sjekkliste-6">
+<h2 class="check" id="sjekkliste-6">Sjekkliste</h2>
+<ul>
+<li>
+<p>Klikk på papegøyefiguren og legg til en kloss som sender melding
+<code>Avslutt</code> etter at figuren sier den har vunnet.</p>
+<pre><code class="language-blocks">når <span class="hljs-string">[a v]</span> trykkes
+hvis &lt;(kappløp) = <span class="hljs-string">[1]</span>&gt;
+    gå (<span class="hljs-number">4</span>) steg
+    hvis &lt;berører <span class="hljs-string">[kant v]</span>?&gt;
+        sett <span class="hljs-string">[kappløp v]</span> til <span class="hljs-string">[0]</span>
+        spill lyden <span class="hljs-string">[Polly v]</span>
+        si <span class="hljs-string">[Polly vinner! v]</span> i (<span class="hljs-number">3</span>) sekunder
+        send melding <span class="hljs-string">[Avslutt v]</span>
+    slutt
+slutt
+</code></pre>
+</li>
+<li>
+<figure>Vi trenger nå et nytt skript som lytter etter denne
+avslutningsmeldingen og flytter papegøyen tilbake til start.</figure>
+<pre><code class="language-blocks">når jeg mottar <span class="hljs-string">[Avslutt v]</span>
+sett x til (-<span class="hljs-number">170</span>)
+</code></pre>
+</li>
+<li>
+<p>Gjør det samme for løvinnen. Test forskjellige <code>x</code>-verdier for å
+være sikker på at løvinnen og papegøyen starter fra samme sted.</p>
+</li>
+<li>
+<p>For at figurene skal stå på startstreken når kappløpet starter den
+aller første gangen må vi også legge til følgende klosser på begge
+figurene:</p>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år <span class="hljs-keyword">gr</span>ønt flagg klikkes
+sett x til (-170)
+</code></pre>
+</li>
+<li>
+<p>For at spillerne skal kunne klikke i gang nye runder må vi passe på
+at start-knappen kommer tilbake etter hver avsluttet runde. Klikk på
+startknapp-figuren og legg til et skript som viser knappen når
+avslutningsmeldingen blir mottatt.</p>
+<pre><code class="language-blocks">når jeg mottar <span class="hljs-string">[Avslutt v]</span>
+vis
+</code></pre>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet-5">
+<h2 class="flag" id="test-prosjektet-5">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>Kan du spille mot en venn? En av dere styrer papegøyen ved å trykke
+<code>A</code>, og den andre løvinnen ved å trykke <code>L</code>.</li>
+</ul>
+</section>
+<section class="save" id="lagre-prosjektet">
+<h2 class="save" id="lagre-prosjektet">Lagre prosjektet</h2>
+<p>Spillet er ferdig! Hvis du vil kan du velge <code>Legg ut</code> slik at venner
+og familie også kan spille det.</p>
+<figure>Nedenfor er det noen forslag og ideer til hvordan du kan utvide
+spillet og gjøre det enda mer interessant.</figure>
+</section>
+<section class="challenge" id="utfordring-1-legg-til-en-rakett">
+<h2 class="challenge" id="utfordring-1-legg-til-en-rakett">Utfordring 1: Legg til en rakett!</h2>
+<ul>
+<li>
+<p><strong>Legg til en rakett</strong> som kan brukes én gang per kappløp og som
+flytter papegøyen eller løvinnen <strong>30 steg på en gang.</strong></p>
+</li>
+<li>
+<p><strong>Legg til en ny drakt</strong> med ild som kommer ut bak figurene. La
+denne aktiveres når raketten avfyres.</p>
+</li>
+<li>
+<p><strong>Lag en lyd</strong> som figuren kan gi fra seg når raketten avfyres.</p>
+</li>
+</ul>
+<figure>Nedenfor er et forslag til hvordan et rakett-skript kan se ut. Du må
+legge til noen lyder og variabler på egen hånd.</figure>
+<pre><code class="language-blocks">når <span class="hljs-string">[q v]</span> trykkes
+hvis &lt;&lt;(kappløp) = <span class="hljs-string">[1]</span>&gt; og &lt;(rakett_brukt) = <span class="hljs-string">[0]</span>&gt;&gt;
+    bytt drakt til <span class="hljs-string">[parrot-rakett v]</span>
+    sett <span class="hljs-string">[rakett_brukt v]</span> til <span class="hljs-string">[1]</span>
+    gå (<span class="hljs-number">30</span>) steg
+    spill lyden <span class="hljs-string">[motorcycle passing v]</span>
+    hvis &lt;berører <span class="hljs-string">[kant v]</span>?&gt;
+        sett <span class="hljs-string">[kappløp v]</span> til <span class="hljs-string">[0]</span>
+        spill lyden <span class="hljs-string">[Polly v]</span>
+        si <span class="hljs-string">[Polly vinner! v]</span> i (<span class="hljs-number">3</span>) sekunder
+        send melding <span class="hljs-string">[Avslutt v]</span>
+    slutt
+    bytt drakt til <span class="hljs-string">[parrot-a v]</span>
+slutt
+</code></pre>
+</section>
+<section class="flag" id="test-prosjektet-6">
+<h2 class="flag" id="test-prosjektet-6">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>
+<p>Fungerer raketten slik du hadde planlagt?</p>
+</li>
+<li>
+<p>Hva skjer om man forsøker å bruke raketten to ganger?</p>
+</li>
+<li>
+<p>Hva skjer om man bruker raketten for å komme til mål?</p>
+</li>
+</ul>
+</section>
+<section class="challenge" id="utfordring-2-bruk-egendefinerte-klosser-for-a-forenkle-skriptet-ditt">
+<h2 class="challenge" id="utfordring-2-bruk-egendefinerte-klosser-for-a-forenkle-skriptet-ditt">Utfordring 2: Bruk egendefinerte klosser for å forenkle skriptet ditt</h2>
+<p>Koden som brukes til å sjekke om kappløpet er over brukes nå to steder
+for hver figur; når figuren beveger seg normalt og når den beveger seg
+med rakett.  Vi kan forenkle skriptet vårt ved å bruke en egendefinert
+kloss. Dette er en samling kode som brukes flere steder. Det er nesten
+som at vi lager vår egen Scratch-kodekloss!</p>
+<ul>
+<li>
+<p>Velg papegøyens skript.</p>
+</li>
+<li>
+<p>Velg <code class="blockmoreblocks">Flere klosser</code>-paletten og klikk så på <code>Lag en kloss</code>-knappen.</p>
+</li>
+<li>
+<figure>Kall klossen din <code>ferdig</code> og trykk OK.</figure>
+</li>
+<li>
+<p>Du vil nå få en <code class="blockmoreblocks">definer ferdig</code>-kloss i
+skriptvinduet ditt. Flytt den litt for seg selv.</p>
+</li>
+<li>
+<p>Løsriv hele <code class="blockcontrol">hvis</code><code class="blocksensing">berører kant?</code>-klossen og dra den til <code class="blockmoreblocks">definer ferdig</code>-klossen.</p>
+</li>
+<li>
+<p>Kan du dra <code class="blockmoreblocks">ferdig</code>-klossen fra paletten og bruke
+den på samme måte som andre kodeklosser?</p>
+</li>
+<li>
+<p>Slett den andre <code class="blockcontrol">hvis</code><code class="blocksensing">berører kant?</code>-klossen fra skriptet ditt og erstatt også den
+med en <code class="blockmoreblocks">ferdig</code>-kloss.</p>
+<pre><code class="language-blocks">definer ferdig
+hvis &lt;berører <span class="hljs-string">[kant v]</span>?&gt;
+    sett <span class="hljs-string">[kappløp v]</span> til <span class="hljs-string">[0]</span>
+    spill lyden <span class="hljs-string">[Polly v]</span>
+    si <span class="hljs-string">[Polly vinner! v]</span> i (<span class="hljs-number">3</span>) sekunder
+    send melding <span class="hljs-string">[Avslutt v]</span>
+
+når <span class="hljs-string">[a v]</span> trykkes
+hvis &lt;(kappløp) = <span class="hljs-string">[1]</span>&gt;
+    gå (<span class="hljs-number">4</span>) steg
+    ferdig
+
+når <span class="hljs-string">[q v]</span> trykkes
+hvis &lt;&lt;(kappløp) = <span class="hljs-string">[1]</span>&gt; og &lt;(rakett_brukt) = <span class="hljs-string">[0]</span>&gt;&gt;
+    bytt drakt til <span class="hljs-string">[parrot-rakett v]</span>
+    sett <span class="hljs-string">[rakett_brukt v]</span> til <span class="hljs-string">[1]</span>
+    gå (<span class="hljs-number">30</span>) steg
+    spill lyden <span class="hljs-string">[motorcycle passing v]</span>
+    ferdig
+    bytt drakt til <span class="hljs-string">[parrot-a v]</span>
+</code></pre>
+</li>
+<li>
+<figure>Gjør dette koden din enklere å lese? Kan du lage en tilsvarende
+egendefinert kloss for løvinnen?</figure>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet-7">
+<h2 class="flag" id="test-prosjektet-7">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>
+<p>Virker spillet fortsatt slik det skal?</p>
+</li>
+<li>
+<figure>Er spillet ferdig når papegøyen eller løvinnen kommer til kanten av
+skjermen?</figure>
+</li>
+</ul>
+</section>
+<section class="save" id="lagre-prosjektet-2">
+<h2 class="save" id="lagre-prosjektet-2">Lagre prosjektet</h2>
+<p>Veldig bra! Nå er du ferdig og kan kose deg med spillet du har laget!</p>
+</section>
+</section>
+</div></div></div></div></div>
+<script type="text/javascript" src="/manifest.6ea44eeac19bc3e880c0.js"></script><script type="text/javascript" src="/vendor.6d5fa98442bff232d8d6.js"></script><script type="text/javascript" src="/main.effc9f6975558c5cacd0.js"></script><script type="text/javascript" src="/vendor2.d68392989297b87f74cc.js"></script></body>
+</html>

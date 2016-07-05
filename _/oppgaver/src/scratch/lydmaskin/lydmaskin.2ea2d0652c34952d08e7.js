@@ -1,0 +1,24 @@
+webpackJsonp([186,236],{
+
+/***/ 1324:
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./~/combine-loader/lib?{"frontmatter":["json","front-matter?onlyAttributes"],"content":["html","markdown-it","front-matter?onlyBody"]}!../oppgaver/src/scratch/lydmaskin/lydmaskin.md ***!
+  \*********************************************************************************************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {"frontmatter": __webpack_require__(/*! -!json!front-matter?onlyAttributes!../oppgaver/src/scratch/lydmaskin/lydmaskin.md */ 1325),"content": __webpack_require__(/*! -!html!markdown-it!front-matter?onlyBody!../oppgaver/src/scratch/lydmaskin/lydmaskin.md */ 1326)}
+
+/***/ },
+
+/***/ 1326:
+/*!******************************************************************************************************************************!*\
+  !*** ./~/html-loader!./~/markdown-it-loader!./~/front-matter-loader?onlyBody!../oppgaver/src/scratch/lydmaskin/lydmaskin.md ***!
+  \******************************************************************************************************************************/
+/***/ function(module, exports) {
+
+	module.exports = "<section class=\"intro\" id=\"introduksjon\">\n<h1 class=\"intro\" id=\"introduksjon\">Introduksjon:</h1>\n<figure>I dette prosjektet skal du designe din egen lydmaskin. Med denne kan\ndu komponere og spille inn din egen sang, og alt i Scratch!</figure>\n</section>\n<section class=\"activity\" id=\"steg-1-design-maskinen-din\">\n<h1 class=\"activity\" id=\"steg-1-design-maskinen-din\">Steg 1: Design maskinen din</h1>\n<p>Hvordan ser maskinen ut? Prøv å lage noen skisser av maskinen på\npapir. Tenk på alle delene av maskinen din. Lager de ulike delene\nforskjellige lyder? Er det vanlige musikkinstrumenter, eller er\ndyrelyder? Hvilke lyder lager maskinen?  Hvor skal du få lydene fra?\nDette kan ta en hel sesjon, så ta deg god tid. Be om flere ark hvis du\ntrenger!</p>\n</section>\n<section class=\"activity\" id=\"steg-2-del-maskinen-inn-i-deler\">\n<h1 class=\"activity\" id=\"steg-2-del-maskinen-inn-i-deler\">Steg 2: Del maskinen inn i deler</h1>\n<p>Når du er fornøyd med designet ditt, del maskinen inn i det som blir\nindividuelle figurer. Ved å dele maskinen inn i flere figurer, blir\ndet enklere å kontrollere, og den kan gjøre forskjellige ting\nsamtidig. Tegn delene og gi dem navn.</p>\n</section>\n<section class=\"activity\" id=\"steg-3-tegn-delene-i-scratch\">\n<h1 class=\"activity\" id=\"steg-3-tegn-delene-i-scratch\">Steg 3: Tegn delene i Scratch</h1>\n<p>Etter at maskinen er delt inn i ulike deler, er det på tide å lage\ndisse på datamaskinen. Du kan enten gjøre dette i figurtegneprogrammet\ni Scratch, eller i et annet tegneprogram som MS Paint eller\nPhotoshop. Hvis du tegner utenfor Scratch, må du lagre og importere\nbildene dine inn i Scratch som figurer (du kan godt be om hjelp til\ndette).</p>\n</section>\n<section class=\"activity\" id=\"steg-4-ta-opp-lyder\">\n<h1 class=\"activity\" id=\"steg-4-ta-opp-lyder\">Steg 4: Ta opp lyder</h1>\n<p>Nå er det på tide at maskinen begynner å lag litt lyd! Bruk lydene som\nfinnes i Scratch eller ta opp egne lyder hvis du har mikrofon. Lag\nforskjellige lyder for hver del. Hva kan du bruke for å lage lyder?\nDin egen stemme? Hendene dine?  Hva annet? Hvilke noter skal de bli?\nBråkete eller stille? Skriv noter under lydene som maskinen skal lage.</p>\n</section>\n<section class=\"activity\" id=\"steg-5-bygg-lydmaskinen\">\n<h1 class=\"activity\" id=\"steg-5-bygg-lydmaskinen\">Steg 5: Bygg lydmaskinen</h1>\n<p>Lederen av kodeklubben har et sett med Scratchkort som du kan bruke\ntil dette. Det finnes kort for instrumenter, lyder og opptak. Sett\ndisse sammen for å lage maskinen din. Bruk fantasien! En tromme\ntrenger ikke se ut som en tromme. Det kan være en papegøye som sier\n‘SQWARK!’ når du trykker på den! Et piano kan være en ape med hale som\nsier ‘OOH OOH!’ når du drar i halen!</p>\n<p>Se på disse kortene:</p>\n<ul>\n<li>Trommer</li>\n<li>Piano</li>\n<li>Lyder</li>\n<li>Opptaker</li>\n</ul>\n</section>\n<section class=\"activity\" id=\"steg-6-komponer-en-sang\">\n<h1 class=\"activity\" id=\"steg-6-komponer-en-sang\">Steg 6: Komponer en sang</h1>\n<p>Når maskinen virker, er du klar til å lage din egen sang!  Det kan\nvære lurt å skrive ned rekkefølgen på &quot;notene&quot; slik at du kan\nøve. Etter at du har skrevet sangen, kan du ta gjøre opptak av denne\nmed opptaker kortet. Du kan da spille sangen din for de andre i\nkodeklubben. Kanskje klubblederen lar deg holde en liten konsert mot\nslutten!</p>\n</section>\n";
+
+/***/ }
+
+});
+//# sourceMappingURL=lydmaskin.2ea2d0652c34952d08e7.js.map

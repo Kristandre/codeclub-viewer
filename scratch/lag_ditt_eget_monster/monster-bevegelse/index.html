@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodeklubben (server)</title>
+    
+<link href="/vendor2.d68392989297b87f74cc.css" rel="stylesheet"></head>
+<body>
+    <div id="app"><div><div data-reactroot="" data-reactid="1" data-react-checksum="-1834590857"><div style="background-color:#B1DAAE;border-radius:5px;height:40px;padding:5px;" data-reactid="2"><p data-reactid="3"><a href="/" data-reactid="4">Front Page</a><span data-reactid="5"><!-- react-text: 6 --> / <!-- /react-text --><a href="/scratch" data-reactid="7">scratch</a></span><span data-reactid="8"><!-- react-text: 9 --> / <!-- /react-text --><a href="/scratch/lag_ditt_eget_monster/monster-bevegelse" class="active" data-reactid="10">monster-bevegelse</a></span></p></div><div data-reactid="11"><h1 data-reactid="12"><!-- react-text: 13 -->Monster - Bevegelse<!-- /react-text --><!-- react-text: 14 --> - Level <!-- /react-text --></h1><p data-reactid="15"><i data-reactid="16"><!-- react-text: 17 -->av <!-- /react-text --><!-- react-text: 18 -->Oversatt fra [Code Club UK](//codeclub.org.uk)<!-- /react-text --></i></p><div data-reactid="19"><section class="check" id="sjekkliste">
+<h2 class="check" id="sjekkliste">Sjekkliste</h2>
+<ul>
+<li>
+<p>Etterhvert vil monsteret ditt bestå av en mengde figurer og det vil
+bli nødvendig å sørge for at alle figurene flyttes sammen. I stedet
+for å legge til flyttkommandoer på alle figurer, kan du rett og
+slett legge til kontroller på kroppsfiguren og bruke en <code class="blockevents">send melding</code> for å kontrollere andre figurer.  Når vår
+tentakkelfigur (eller en hvilken som helst annen figur!) mottar en
+<code>flyttet høyre</code>-melding, kan vi flytte den også til høyre.</p>
+<pre><code class="language-blocks"><span class="hljs-comment">// på spøkelseskroppen</span>
+<span class="hljs-keyword">n</span>år [pil <span class="hljs-keyword">h</span>øyre v] trykkes
+endre x med (hastighet)
+send melding [flyttet <span class="hljs-keyword">h</span>øyre v]
+
+<span class="hljs-keyword">n</span>år [pil venstre v] trykkes
+endre x med ((hastighet) * (-1))
+send melding [flyttet venstre v]
+
+<span class="hljs-comment">// på tentakkelen</span>
+<span class="hljs-keyword">n</span>år jeg mottar [flyttet <span class="hljs-keyword">h</span>øyre v]
+endre x med (hastighet)
+
+<span class="hljs-keyword">n</span>år jeg mottar [flyttet venstre v]
+endre x med ((hastighet) * (-1))
+</code></pre>
+</li>
+<li>
+<p>Ved å bruke en <code class="blockevents">send melding</code> kan vi også endre
+hvordan bevegelseskommandoen virker, ved å bare endre et
+skript. <strong>Ta en titt på dette eksempelet:</strong></p>
+<pre><code class="language-blocks"><span class="hljs-comment">// på spøkelseskroppen</span>
+når <span class="hljs-attr_selector">[pil høyre v]</span> trykkes
+endre x med (hastighet)
+pek <span class="hljs-tag">i</span> retning (90 v)
+sprett tilbake ved kanten
+hvis &lt;ikke &lt;berører <span class="hljs-attr_selector">[kant v]</span>?&gt;&gt;
+    send melding <span class="hljs-attr_selector">[flyttet høyre v]</span>
+    send melding <span class="hljs-attr_selector">[flyttet v]</span>
+slutt
+
+når <span class="hljs-attr_selector">[pil venstre v]</span> trykkes
+endre x med ((hastiget) * (-1))
+pek <span class="hljs-tag">i</span> retning (-90 v)
+sprett tilbake ved kanten
+hvis &lt;ikke &lt;berører <span class="hljs-attr_selector">[kant v]</span>?&gt;&gt;
+    send melding <span class="hljs-attr_selector">[flyttet venstre v]</span>
+    send melding <span class="hljs-attr_selector">[flyttet v]</span>
+slutt
+</code></pre>
+</li>
+<li>
+<p>Her forteller vi at kroppen skal gå i den retningen den beveger seg
+i (husk å sette figur orienteringen til <strong>“venstre-høyre”</strong>) og for
+å stoppe og at den snur hvis den kolliderer med
+skjermkanten. Kanskje har du også lagt merke til at vi har lagt
+meldingen i en <code class="blockcontrol">hvis</code>-kloss, vi vil bare at de andre
+kroppsdelene skal bevege seg hvis kroppen ikke er i kanten av
+skjermen. <strong>Hvis du bestemmer deg for å legge til animasjon på
+bevegelsen, må du huske på at tilhørende bevegelser vil ta like lang
+tid. f. eks hvis å bevege et bein til venstre tar 1 sekund, må alle
+andre venstrebevegelser ta et sekund også (bruk en
+<code class="blockcontrol">vent</code>-kloss for å sørge at de er i samme steg).</strong></p>
+</li>
+<li>
+<p>Du kan også animere kroppsfiguren ved å bruke <code class="blocklooks">neste drakt</code>, som kan aktiveres hver gang en
+bevegelsesmelding mottas.</p>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år jeg mottar [flyttet <span class="hljs-keyword">h</span>øyre v]
+neste drakt
+</code></pre>
+</li>
+</ul>
+</section>
+</div></div></div></div></div>
+<script type="text/javascript" src="/manifest.6ea44eeac19bc3e880c0.js"></script><script type="text/javascript" src="/vendor.6d5fa98442bff232d8d6.js"></script><script type="text/javascript" src="/main.effc9f6975558c5cacd0.js"></script><script type="text/javascript" src="/vendor2.d68392989297b87f74cc.js"></script></body>
+</html>

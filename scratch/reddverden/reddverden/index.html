@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodeklubben (server)</title>
+    
+<link href="/vendor2.d68392989297b87f74cc.css" rel="stylesheet"></head>
+<body>
+    <div id="app"><div><div data-reactroot="" data-reactid="1" data-react-checksum="-1130888142"><div style="background-color:#B1DAAE;border-radius:5px;height:40px;padding:5px;" data-reactid="2"><p data-reactid="3"><a href="/" data-reactid="4">Front Page</a><span data-reactid="5"><!-- react-text: 6 --> / <!-- /react-text --><a href="/scratch" data-reactid="7">scratch</a></span><span data-reactid="8"><!-- react-text: 9 --> / <!-- /react-text --><a href="/scratch/reddverden/reddverden" class="active" data-reactid="10">reddverden</a></span></p></div><div data-reactid="11"><h1 data-reactid="12"><!-- react-text: 13 -->Redd verden<!-- /react-text --><!-- react-text: 14 --> - Level <!-- /react-text --><!-- react-text: 15 -->2<!-- /react-text --></h1><p data-reactid="16"><i data-reactid="17"><!-- react-text: 18 -->av <!-- /react-text --><!-- react-text: 19 -->Shayan Zeida og [Arne Hassel](http://icanhasweb.net/)<!-- /react-text --></i></p><div data-reactid="20"><section class="intro" id="introduksjon">
+<h1 class="intro" id="introduksjon">Introduksjon</h1>
+<p>Kildesortering er viktig for å begrense hvor mye avfallet vårt
+påvirker miljøet. I dette spillet skal vi kildesortere og samtidig
+lære en hel del om meldinger i programmering.</p>
+<figure><img src="/_/oppgaver/src/scratch/reddverden/reddverden.ae11dc.png" alt="" /></figure>
+</section>
+<section class="activity" id="steg-1-legg-til-ronny-og-soppelet">
+<h1 class="activity" id="steg-1-legg-til-ronny-og-soppelet">Steg 1: Legg til Ronny og søppelet</h1>
+<figure>Vi starter spillet med å introdusere Ronny, som er vår hjelper underveis,
+og søppelet som vi skal kaste.</figure>
+<section class="check" id="sjekkliste">
+<h2 class="check" id="sjekkliste">Sjekkliste</h2>
+<ul>
+<li>
+<p>Start et nytt prosjekt. Legg til en ny figur, enten fra biblioteket,
+slik vi har gjort, eller tegn din helt egen hjelper! Vi valgte figuren
+<code>nano</code>, da han har flere drakter som vi tenker å bruke i utfordrings-delene.</p>
+<figure><img src="/_/oppgaver/src/scratch/reddverden/ronny.df5c11.png" alt="" /></figure>
+</li>
+<li>
+<p>Målet med spillet er å få all søppelet i bøttene de hører til. Hver gang
+vi fjerner en søppel-figur så får vi et poeng. Målet vårt er å få så mange
+poeng som det er søppel-biter.</p>
+<p>I første omgang vet ikke Ronny om noe av søppelet, så vi lar Ronny sette
+både poeng og mål til null. For å legge til variabler trykker vi på
+<code class="blockdata">Data</code>-kategorien og trykk på <code>Lag en Variabel</code>.</p>
+<pre><code class="language-blocks">når grønt flagg klikkes
+sett <span class="hljs-string">[Mål v]</span> til <span class="hljs-string">[0]</span>
+sett <span class="hljs-string">[Poeng v]</span> til <span class="hljs-string">[0]</span>
+</code></pre>
+</li>
+<li>
+<p>Legg til seks figurer som representerer søppel. Her kan du igjen velge
+eksisterende figurer fra biblioteket, tegne dine egne, eller finne
+noen bilder på nettet du syns passer. Selv valgte vi noen bananer, et eple,
+en ballong, et hellikopter, en melkekartong, og en avis.</p>
+<style>
+figure.inline > img {
+  width: 100px;
+  display: inline;
+}
+</style>
+<figure class="inline">
+  <img src="/_/oppgaver/src/scratch/reddverden/bananer.0df8e6.png" />
+  <img src="/_/oppgaver/src/scratch/reddverden/eple.36a7ef.png" />
+  <img src="/_/oppgaver/src/scratch/reddverden/ballong.a1d93a.png" />
+  <img src="/_/oppgaver/src/scratch/reddverden/hellikopter.323d01.png" />
+  <img src="/_/oppgaver/src/scratch/reddverden/melk.c0aa2f.png" />
+  <img src="/_/oppgaver/src/scratch/reddverden/avis.84aab8.png" />
+</figure>
+</li>
+<li>
+<p>Velg så en bakgrunn som vi kan plassere figurene våre rundt i. Vi valgte
+kjøkken fra biblioteket, men tegn gjerne noe eget eller finn et annet bilde du
+heller har lyst til å bruke.</p>
+<figure><img src="/_/oppgaver/src/scratch/reddverden/kitchen.87c2e5.png" alt="" /></figure>
+</li>
+<li>
+<figure>Vi kommer til å flytte rundt på søppel-figurene, så det er viktig at vi
+plasserer dem på nytt hver gang vi starter spillet.</figure>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år <span class="hljs-keyword">gr</span>ønt flagg klikkes
+<span class="hljs-keyword">g</span>å til x: (78) y: (5)
+</code></pre>
+<figure>Søppel-figurene må ha hver sin plass, så det er viktig at du finner noen x- og
+y-koordinater for hver av dem.</figure>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet">
+<h2 class="flag" id="test-prosjektet">Test prosjektet</h2>
+<ul>
+<li>Om du flytter rundt på søppel-bitene, blir de satt tilbake når du trykker
+på det grønne flagget?</li>
+</ul>
+</section>
+</section>
+<section class="activity" id="steg-2-sett-opp-spillet">
+<h1 class="activity" id="steg-2-sett-opp-spillet">Steg 2: Sett opp spillet</h1>
+<figure>Ronny trenger å vite hvor mange søppel-figurer som er på brettet. For å finne ut av
+det, så ber vi om hjelp fra søppel-figurene selv.</figure>
+<section class="check" id="sjekkliste-2">
+<h2 class="check" id="sjekkliste-2">Sjekkliste</h2>
+<ul>
+<li>
+<p>Ronny kan kommunisere med søppelet ved hjelp av meldinger. Start med å sende meldingen
+<code>Forbered spill</code>.</p>
+<pre><code class="language-blocks">når grønt flagg klikkes
+sett <span class="hljs-string">[Mål v]</span> til <span class="hljs-string">[0]</span>
+sett <span class="hljs-string">[Poeng v]</span> til <span class="hljs-string">[0]</span>
+send melding <span class="hljs-string">[Forbered spill v]</span>
+</code></pre>
+</li>
+<li>
+<figure>Hver av søppel-bitene må nå svare på beskjeden ved å øke <code>Mål</code> med en.</figure>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år jeg mottar [Forbered spill v]
+endre [<span class="hljs-keyword">M</span>å<span class="hljs-keyword">l</span> v] med (1)
+</code></pre>
+</li>
+<li>
+<p>Før spillet kan starte må vi gi Ronny litt tid til å kommunisere
+og la søppelet telle opp målet vi skal nå. En ting vi kan gjøre er å la
+Ronny snakke litt. Når Ronny er ferdig med å prate, så kan vi starte
+spillet.</p>
+<pre><code class="language-blocks">når grønt flagg klikkes
+sett <span class="hljs-string">[Mål v]</span> til <span class="hljs-string">[0]</span>
+sett <span class="hljs-string">[Poeng v]</span> til <span class="hljs-string">[0]</span>
+send melding <span class="hljs-string">[Forbered spill v]</span>
+si <span class="hljs-string">[Hei, jeg heter Ronny, kan du hjelpe meg med å redde verden?]</span> i (<span class="hljs-number">3</span>) sekunder
+send melding <span class="hljs-string">[Start spill v]</span>
+si <span class="hljs-string">[Vi må sortere avfallet til hver sin kilde, kan du hjelpe meg med det?]</span> i (<span class="hljs-number">3</span>) sekunder
+</code></pre>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet-2">
+<h2 class="flag" id="test-prosjektet-2">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>
+<p>Blir mål satt til riktig antall søppel-biter? I vårt tilfelle skal det bli seks.</p>
+</li>
+<li>
+<p>Snakker Ronny?</p>
+</li>
+</ul>
+</section>
+<section class="challenge" id="utfordring">
+<h2 class="challenge" id="utfordring">Utfordring</h2>
+<ul>
+<li>
+<figure>Ronny har flere drakter som viser han blid og sur. Klarer du å bytte drakt på Ronny når han snakker,
+og tilbake når han er ferdig med å snakke?</figure>
+<figure><img src="/_/oppgaver/src/scratch/reddverden/ronny_prater.bff09b.png" alt="" /> <!-- ikke figur --></figure>
+</li>
+<li>
+<p>Istedenfor snakkebobler, klarer du spille inn din egen stemme?
+<strong>Hint:</strong> Bruk blokken under.</p>
+<pre><code class="language-blocks">spill lyden <span class="hljs-string">[opptak 1 v]</span> til den er ferdig
+</code></pre>
+</li>
+</ul>
+</section>
+</section>
+<section class="activity" id="steg-3-start-spillet">
+<h1 class="activity" id="steg-3-start-spillet">Steg 3: Start spillet</h1>
+<p>Nå som vi vet antall poeng vi skal nå, kan vi sette opp bøttene våre.</p>
+<section class="check" id="sjekkliste-3">
+<h2 class="check" id="sjekkliste-3">Sjekkliste</h2>
+<ul>
+<li>
+<p>Tegn en ny figur for hver av bøttene <code>Mat</code>, <code>Plast</code> og <code>Papir</code>.</p>
+<figure class="inline">
+  <img src="/_/oppgaver/src/scratch/reddverden/mat.a54831.png" />
+  <img src="/_/oppgaver/src/scratch/reddverden/plast.df5fda.png" />
+  <img src="/_/oppgaver/src/scratch/reddverden/papir.365c84.png" />
+</figure>
+</li>
+<li>
+<p>Vi ønsker ikke å vise bøttene før spillet er i gang. For å få til dette kan vi
+benytte oss av <code>Start spill</code>-meldingen.</p>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år <span class="hljs-keyword">gr</span>ønt flagg klikkes
+skjul
+</code></pre>
+<pre><code class="language-blocks">når jeg mottar <span class="hljs-string">[Start spill v]</span>
+vis
+</code></pre>
+</li>
+<li>
+<figure>Dette trikset kan vi også gjøre for søppelet, som også er greit å skjule før
+spillet er i gang.</figure>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år <span class="hljs-keyword">gr</span>ønt flagg klikkes
+skjul
+<span class="hljs-keyword">g</span>å til x: (78) y: (5)
+</code></pre>
+<pre><code class="language-blocks">når jeg mottar <span class="hljs-string">[Start spill v]</span>
+vis
+</code></pre>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet-3">
+<h2 class="flag" id="test-prosjektet-3">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>
+<p>Skjules bøttene i starten? Blir de vist når Ronny er ferdig å snakke?</p>
+</li>
+<li>
+<p>Skjer det samme med søppel-bitene?</p>
+</li>
+</ul>
+</section>
+</section>
+<section class="activity" id="steg-4-sortering">
+<h1 class="activity" id="steg-4-sortering">Steg 4: Sortering</h1>
+<p>Nå må vi få til poeng-giving når vi flytter søppel-bitene opp i bøttene.</p>
+<section class="check" id="sjekkliste-4">
+<h2 class="check" id="sjekkliste-4">Sjekkliste</h2>
+<ul>
+<li>
+<figure>Måten vi flytter på søppel-bitene er at vi lar dem bevege seg etter musepekeren
+til de er flyttet til sin passende bøtte.</figure>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år denne figuren klikkes
+gjenta til &lt;berører [<span class="hljs-keyword">Mat</span> v] ?&gt;
+  <span class="hljs-keyword">g</span>å til [musepeker v]
+slutt
+</code></pre>
+</li>
+<li>
+<figure>Når søppelet er lagt i sin passende bøtte, trenger vi å legge til ett poeng og skjule
+søppelet.</figure>
+<pre><code class="language-blocks">når denne figuren klikkes
+gjenta til &lt;berører <span class="hljs-string">[Mat v]</span> ?&gt;
+  gå til <span class="hljs-string">[musepeker v]</span>
+slutt
+endre <span class="hljs-string">[Poeng v]</span> med (<span class="hljs-number">1</span>)
+skjul
+</code></pre>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet-4">
+<h2 class="flag" id="test-prosjektet-4">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>Når du trykker på en søppel-bit, følger den etter musepekeren? Forsvinner søppelbiten
+når den går i den riktige bøtten? Husk at ikke alt skal i <code>Mat</code>, noe skal også
+i <code>Plast</code> eller <code>Papir</code>.</li>
+</ul>
+</section>
+<section class="challenge" id="utfordring-2">
+<h2 class="challenge" id="utfordring-2">Utfordring</h2>
+<ul>
+<li>
+<figure>Klarer du å avslutte flyttinga hvis du flytter søppelet til feil bøtte? Kanskje til og
+med få Ronny sur hvis feil bøtte brukes?</figure>
+<figure><img src="/_/oppgaver/src/scratch/reddverden/ronny_sur.e7869c.png" alt="" /> <!-- ikke figur --></figure>
+</li>
+</ul>
+</section>
+</section>
+<section class="activity" id="steg-5-avslutt-spillet">
+<h1 class="activity" id="steg-5-avslutt-spillet">Steg 5: Avslutt spillet</h1>
+<p>Når vi har fått alt søppelet på plass, må vi avslutte spillet.</p>
+<section class="check" id="sjekkliste-5">
+<h2 class="check" id="sjekkliste-5">Sjekkliste</h2>
+<ul>
+<li>
+<p><code>Ronny</code> trenger å vite når spillet er over. Det kan vi gjøre ved å legge til
+<code>vent til</code>-blokk i skriptet hans.</p>
+<pre><code class="language-blocks">når grønt flagg klikkes
+sett <span class="hljs-string">[Mål v]</span> til <span class="hljs-string">[0]</span>
+sett <span class="hljs-string">[Poeng v]</span> til <span class="hljs-string">[0]</span>
+send melding <span class="hljs-string">[Forbered spill v]</span>
+si <span class="hljs-string">[Hei, jeg heter Ronny, kan du hjelpe meg med å redde verden?]</span> i (<span class="hljs-number">3</span>) sekunder
+send melding <span class="hljs-string">[Start spill v]</span>
+vent til &lt;(Poeng) = (Mål)&gt;
+send melding <span class="hljs-string">[Spill ferdig v]</span>
+si <span class="hljs-string">[Takk for at du hjelper meg med å redde verden!]</span>
+</code></pre>
+</li>
+<li>
+<p>I tillegg til at Ronny takker oss for at vi kildesorterte alt avfallet, så ber vi han også
+sende meldingen <code>Spill ferdig</code>. Dette gjør at vi kan fortelle de andre figurene at spillet
+er ferdig.</p>
+<p>Da kan vi for eksempel fortelle bøttene at de skal skjule seg selv når spillet er ferdig.</p>
+<pre><code class="language-blocks">når jeg mottar <span class="hljs-string">[Spill ferdig v]</span>
+skjul
+</code></pre>
+</li>
+<li>
+<p>Til slutt kan vi forandre bakgrunnen når spillet avsluttes, for å gjøre avslutningen enda
+litt finere. Trykk på <code>Scene</code> og legg til en bakgrunn.</p>
+<p>Vi valgte <code>water and rocks</code> fra biblioteket, men det er bare å velge noe du syns er finere,
+evt lage noe selv.</p>
+<figure><img src="/_/oppgaver/src/scratch/reddverden/finale.0f8479.png" alt="" /></figure>
+</li>
+<li>
+<p>Til slutt trenger vi å fortelle når bakgrunnen skal skiftes. Du kan gjøre det ved å legge
+til følgende på skriptet til <code>Scene</code>.</p>
+<pre><code class="language-blocks">når jeg mottar [Spill ferdig v]
+<span class="hljs-keyword">bytt </span><span class="hljs-keyword">bakgrunn </span>til [water <span class="hljs-keyword">and </span>rocks v]
+</code></pre>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet-5">
+<h2 class="flag" id="test-prosjektet-5">Test prosjektet</h2>
+<figure><strong>Klikk på det grønne flagget.</strong></figure>
+<ul>
+<li>Når alt søppelet er sortert, blir bakgrunnen byttet og Ronny takker for hjelpen?</li>
+</ul>
+</section>
+<section class="challenge" id="utfordring-3">
+<h2 class="challenge" id="utfordring-3">Utfordring</h2>
+<ul>
+<li>
+<figure>Klarer du å sette en tredje bakgrunn når det grønne flagget klikkes? Husk at vi
+vil fortsatt ha kjøkkenbakgrunn når søppel-figurene skal flyttes.</figure>
+</li>
+<li>
+<figure>Klarer du å forandre draken til Ronny for å vise hvor glad han blir når
+du har reddet verden?</figure>
+<figure><img src="/_/oppgaver/src/scratch/reddverden/ronny_blid.e40a6c.png" alt="" /> <!-- ikke figur --></figure>
+</li>
+</ul>
+</section>
+</section>
+<section class="activity" id="hva-har-vi-laert">
+<h1 class="activity" id="hva-har-vi-laert">Hva har vi lært?</h1>
+<p>I dette spillet har vi lært hvordan vi kan bruke meldinger til å bryte opp spillet i
+mange små biter. Mindre biter gjør programmet vårt mindre usikkert, og lettere å få
+oversikt over hvis noe går galt.</p>
+<p>I tillegg lærte vi å dele ansvaret på flere figurer. Ronny hadde ansvaret for å holde
+oversikt på poengene, men fikk hjelp av søppel-figurene til å finne ut hvor mange
+søppel-biter som fantes. Dette er også et viktig prinsipp i programmering, nemlig fordeling
+av ansvar.</p>
+</section>
+</div></div></div></div></div>
+<script type="text/javascript" src="/manifest.6ea44eeac19bc3e880c0.js"></script><script type="text/javascript" src="/vendor.6d5fa98442bff232d8d6.js"></script><script type="text/javascript" src="/main.effc9f6975558c5cacd0.js"></script><script type="text/javascript" src="/vendor2.d68392989297b87f74cc.js"></script></body>
+</html>

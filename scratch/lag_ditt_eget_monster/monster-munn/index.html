@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodeklubben (server)</title>
+    
+<link href="/vendor2.d68392989297b87f74cc.css" rel="stylesheet"></head>
+<body>
+    <div id="app"><div><div data-reactroot="" data-reactid="1" data-react-checksum="-175269279"><div style="background-color:#B1DAAE;border-radius:5px;height:40px;padding:5px;" data-reactid="2"><p data-reactid="3"><a href="/" data-reactid="4">Front Page</a><span data-reactid="5"><!-- react-text: 6 --> / <!-- /react-text --><a href="/scratch" data-reactid="7">scratch</a></span><span data-reactid="8"><!-- react-text: 9 --> / <!-- /react-text --><a href="/scratch/lag_ditt_eget_monster/monster-munn" class="active" data-reactid="10">monster-munn</a></span></p></div><div data-reactid="11"><h1 data-reactid="12"><!-- react-text: 13 -->Monster - Pratende Munn<!-- /react-text --><!-- react-text: 14 --> - Level <!-- /react-text --></h1><p data-reactid="15"><i data-reactid="16"><!-- react-text: 17 -->av <!-- /react-text --><!-- react-text: 18 -->Oversatt fra [Code Club UK](//codeclub.org.uk)<!-- /react-text --></i></p><div data-reactid="19"><section class="check" id="sjekkliste">
+<h2 class="check" id="sjekkliste">Sjekkliste</h2>
+<ul>
+<li>
+<p>For å få monsteret til å snakke, kan du bruke en
+<code class="blocklooks">si</code>-kloss.</p>
+<pre><code class="language-blocks">når <span class="hljs-string">[mellomrom v]</span> trykkes
+si <span class="hljs-string">[Hallo!]</span> i (<span class="hljs-number">2</span>) sekunder
+</code></pre>
+</li>
+<li>
+<p>For å gjøre det litt mer imponerende, kan du få monsteret til å
+<strong>åpne</strong> og <strong>lukke munnen</strong> mens det prater. For å gjøre dette,
+rediger figuren som inneholder munnen - opprett en ny <code>drakt</code> som
+har lukket munn. Ved å bytte mellom de to, kan du animere at munnen
+åpner og lukker seg.</p>
+<pre><code class="language-blocks"><span class="hljs-tag">gjenta</span> (8) <span class="hljs-tag">ganger</span>
+    <span class="hljs-tag">vent</span> (0<span class="hljs-class">.1</span>) <span class="hljs-tag">sekunder</span>
+    <span class="hljs-tag">bytt</span> <span class="hljs-tag">drakt</span> <span class="hljs-tag">til</span> <span class="hljs-attr_selector">[munnLukket v]</span>
+    <span class="hljs-tag">vent</span> (0<span class="hljs-class">.1</span>) <span class="hljs-tag">sekunder</span>
+    <span class="hljs-tag">bytt</span> <span class="hljs-tag">drakt</span> <span class="hljs-tag">til</span> <span class="hljs-attr_selector">[munnÅpen v]</span>
+<span class="hljs-tag">slutt</span>
+</code></pre>
+</li>
+<li>
+<p>For å koble de to skriptene sammen, kan du få
+<code class="blocklooks">si</code>-klossen til å sende en melding, som den andre
+blokken kan reagere på.</p>
+<pre><code class="language-blocks"><span class="hljs-tag">n</span>å<span class="hljs-tag">r</span> <span class="hljs-attr_selector">[mellomrom v]</span> <span class="hljs-tag">trykkes</span>
+<span class="hljs-tag">send</span> <span class="hljs-tag">melding</span> <span class="hljs-attr_selector">[snakk v]</span>
+<span class="hljs-tag">si</span> <span class="hljs-attr_selector">[Hallo!]</span> <span class="hljs-tag">i</span> (2) <span class="hljs-tag">sekunder</span>
+
+<span class="hljs-tag">n</span>å<span class="hljs-tag">r</span> <span class="hljs-tag">jeg</span> <span class="hljs-tag">mottar</span> <span class="hljs-attr_selector">[snakk v]</span>
+<span class="hljs-tag">gjenta</span> (8) <span class="hljs-tag">ganger</span>
+    <span class="hljs-tag">vent</span> (0<span class="hljs-class">.1</span>) <span class="hljs-tag">sekunder</span>
+    <span class="hljs-tag">bytt</span> <span class="hljs-tag">drakt</span> <span class="hljs-tag">til</span> <span class="hljs-attr_selector">[munnLukket v]</span>
+    <span class="hljs-tag">vent</span> (0<span class="hljs-class">.1</span>) <span class="hljs-tag">sekunder</span>
+    <span class="hljs-tag">bytt</span> <span class="hljs-tag">drakt</span> <span class="hljs-tag">til</span> <span class="hljs-attr_selector">[munnÅpen v]</span>
+<span class="hljs-tag">slutt</span>
+</code></pre>
+</li>
+<li>
+<p>For å gjøre det litt mer fleksibelt, bruk en variabel for å
+kontrollere <code class="blockdata">snakketid</code>, hvor lenge monsteret sier noe,
+og for å kontrollere hvor mange ganger animasjonsløkken er gjentatt.</p>
+<pre><code class="language-blocks"><span class="hljs-tag">n</span>å<span class="hljs-tag">r</span> <span class="hljs-attr_selector">[mellomrom v]</span> <span class="hljs-tag">trykkes</span>
+<span class="hljs-tag">sett</span> <span class="hljs-attr_selector">[snakketid v]</span> <span class="hljs-tag">til</span> <span class="hljs-attr_selector">[2]</span>
+<span class="hljs-tag">send</span> <span class="hljs-tag">melding</span> <span class="hljs-attr_selector">[snakk v]</span>
+<span class="hljs-tag">si</span> <span class="hljs-attr_selector">[Hallo!]</span> <span class="hljs-tag">i</span> (<span class="hljs-tag">snakketid</span>) <span class="hljs-tag">sekunder</span>
+
+<span class="hljs-tag">n</span>å<span class="hljs-tag">r</span> <span class="hljs-attr_selector">[a v]</span> <span class="hljs-tag">trykkes</span>
+<span class="hljs-tag">sett</span> <span class="hljs-attr_selector">[snakketid v]</span> <span class="hljs-tag">til</span> <span class="hljs-attr_selector">[4]</span>
+<span class="hljs-tag">send</span> <span class="hljs-tag">melding</span> <span class="hljs-attr_selector">[snakk v]</span>
+<span class="hljs-tag">si</span> <span class="hljs-attr_selector">[Noe litt lengre]</span> <span class="hljs-tag">i</span> (<span class="hljs-tag">snakketid</span>) <span class="hljs-tag">sekunder</span>
+
+<span class="hljs-tag">n</span>å<span class="hljs-tag">r</span> <span class="hljs-tag">jeg</span> <span class="hljs-tag">mottar</span> <span class="hljs-attr_selector">[snakk v]</span>
+<span class="hljs-tag">gjenta</span> ((<span class="hljs-tag">snakketid</span>) * (4)) <span class="hljs-tag">ganger</span>
+    <span class="hljs-tag">vent</span> (0<span class="hljs-class">.1</span>) <span class="hljs-tag">sekunder</span>
+    <span class="hljs-tag">bytt</span> <span class="hljs-tag">drakt</span> <span class="hljs-tag">til</span> <span class="hljs-attr_selector">[munnLukket v]</span>
+    <span class="hljs-tag">vent</span> (0<span class="hljs-class">.1</span>) <span class="hljs-tag">sekunder</span>
+    <span class="hljs-tag">bytt</span> <span class="hljs-tag">drakt</span> <span class="hljs-tag">til</span> <span class="hljs-attr_selector">[munnÅpen v]</span>
+<span class="hljs-tag">slutt</span>
+</code></pre>
+</li>
+</ul>
+<p><strong>(Merk at vi multipliserer snakketid med 4 for å være sikre på at
+løkken gjentas nok ganger)</strong></p>
+<ul>
+<li>
+<p>Du kan også få monsteret ditt til å si lyder ved å bruke en av
+lydklossene. Husk å importere lydene under <code>Lyd</code>-fanen.</p>
+<pre><code class="language-blocks">når jeg mottar <span class="hljs-string">[snakk v]</span>
+spill lyden <span class="hljs-string">[Screech v]</span>
+</code></pre>
+</li>
+</ul>
+<p><strong>Prøv å legge til lyder til andre hendelser, du kan bruke en skummel
+svevende lyd for et spøkelse som flyr rundt på skjermen! Har du
+mikrofon på datamaskinen kan du ta opp dine egne lyder, overrask de
+andre ved å ta opp et høyt monster BRØØØØØØØØØL!!!</strong></p>
+</section>
+</div></div></div></div></div>
+<script type="text/javascript" src="/manifest.6ea44eeac19bc3e880c0.js"></script><script type="text/javascript" src="/vendor.6d5fa98442bff232d8d6.js"></script><script type="text/javascript" src="/main.effc9f6975558c5cacd0.js"></script><script type="text/javascript" src="/vendor2.d68392989297b87f74cc.js"></script></body>
+</html>

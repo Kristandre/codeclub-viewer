@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodeklubben (server)</title>
+    
+<link href="/vendor2.d68392989297b87f74cc.css" rel="stylesheet"></head>
+<body>
+    <div id="app"><div><div data-reactroot="" data-reactid="1" data-react-checksum="359820675"><div style="background-color:#B1DAAE;border-radius:5px;height:40px;padding:5px;" data-reactid="2"><p data-reactid="3"><a href="/" data-reactid="4">Front Page</a><span data-reactid="5"><!-- react-text: 6 --> / <!-- /react-text --><a href="/scratch" data-reactid="7">scratch</a></span><span data-reactid="8"><!-- react-text: 9 --> / <!-- /react-text --><a href="/scratch/3d_flakser/3d_flakser_1" class="active" data-reactid="10">3d_flakser_1</a></span></p></div><div data-reactid="11"><h1 data-reactid="12"><!-- react-text: 13 -->3D-Flakser, Del 1<!-- /react-text --><!-- react-text: 14 --> - Level <!-- /react-text --><!-- react-text: 15 -->4<!-- /react-text --></h1><p data-reactid="16"><i data-reactid="17"><!-- react-text: 18 -->av <!-- /react-text --><!-- react-text: 19 -->Gudbrand Tandberg og Geir Arne Hjelle<!-- /react-text --></i></p><div data-reactid="20"><section class="intro" id="introduksjon">
+<h1 class="intro" id="introduksjon">Introduksjon</h1>
+<p>I dette prosjektet skal vi lage en versjon av Flaksefugl (som er en
+kopi av Flappy Bird) i <em>tre dimensjoner</em>! Spillet går ut på at du
+styrer en flyvende figur gjennom ringer som kommer mot deg. Du må
+styre figuren opp og ned og side til side. Hovedutfordringen i dette
+spillet er å få det til å virke som om ringene faktisk kommer mot
+flakseren, og så forsvinner forbi. Prosjektet er delt inn i to deler
+siden det er ganske mye vi skal igjennom. I denne første delen skal vi
+få ringene til å fungere som de skal. La oss sette i gang!</p>
+<figure><img src="/_/oppgaver/src/scratch/3d_flakser/3d_flakser.8b16ef.png" alt="" /></figure>
+</section>
+<section class="activity" id="steg-1-lag-ringer-og-fa-dem-til-a-komme-mot-deg">
+<h1 class="activity" id="steg-1-lag-ringer-og-fa-dem-til-a-komme-mot-deg">Steg 1: Lag ringer, og få dem til å komme mot deg</h1>
+<p>Spillet skal bestå av tre figurer: <strong>Ring</strong>, <strong>Flakser</strong> og
+<strong>Bakken</strong>.</p>
+<figure>Vi begynner med å lage ringfiguren. Du kan enkelt tegne den selv som
+to sirkler inni hverandre, fylt med en farge imellom.</figure>
+<section class="check" id="sjekkliste">
+<h2 class="check" id="sjekkliste">Sjekkliste</h2>
+<ul>
+<li>
+<p>Tegn figuren <strong>Ring</strong>. Jo enklere jo bedre.</p>
+</li>
+<li>
+<p>Gi ringfiguren disse skriptene:</p>
+<pre><code class="language-blocks"><span class="hljs-keyword">n</span>år jeg mottar [Nytt spill v]
+skjul
+<span class="hljs-keyword">for</span> alltid
+    lag klon av [meg v]
+    vent (1) sekunder
+slutt
+
+<span class="hljs-keyword">n</span>år jeg starter som klon
+<span class="hljs-keyword">g</span>å til x: (0) y: (0)
+vis
+gjenta (10) ganger
+    endre <span class="hljs-keyword">st</span>ørrelse med (5)
+    vent (0.1) sekunder
+slutt
+slett denne klonen
+</code></pre>
+</li>
+</ul>
+<p>Du må også lage et skript som sørger for at meldingen <code>Nytt spill</code>
+sendes når det grønne flagget klikkes.</p>
+</section>
+<section class="flag" id="test-prosjektet">
+<h2 class="flag" id="test-prosjektet">Test prosjektet</h2>
+<ul>
+<li>Hva gjør de to skriptene over? Ser det ut som om ringene kommer mot
+deg?</li>
+</ul>
+</section>
+<section class="check" id="sjekkliste-2">
+<h2 class="check" id="sjekkliste-2">Sjekkliste</h2>
+<p>De to skriptene vi har foreløpig er en OK start, men de er ikke gode
+nok til å virkelig kalles 3D! Tenk litt på hvordan det virker som om
+noe vokser i størrelse når det kommer mot deg. Når det er langt unna
+så vokser det ganske sakte, mens når det er nærme så vokser det mye
+fortere. Dette skal vi få til ved hjelp av en <em>variabel</em> som vi kaller
+<code class="blockdata">distanse</code>. Når <code class="blockdata">distanse</code> er stor, så er
+ringen langt borte, og skal vokse sakte. Når <code class="blockdata">distanse</code> er
+liten så betyr det at ringen er nærme, og den skal vokse fort.</p>
+<ul>
+<li>
+<p>Lag en variabel som heter <code class="blockdata">distanse</code>. Pass på at den kun
+gjelder for denne figuren.</p>
+</li>
+<li>
+<p>Endre skriptet over til dette:</p>
+<pre><code class="language-blocks"><span class="hljs-atom">n</span>å<span class="hljs-atom">r</span> <span class="hljs-atom">jeg</span> <span class="hljs-atom">starter</span> <span class="hljs-atom">som</span> <span class="hljs-atom">klon</span>
+<span class="hljs-atom">g</span>å <span class="hljs-atom">til</span> <span class="hljs-atom">x</span>: (<span class="hljs-number">0</span>) <span class="hljs-atom">y</span>: (<span class="hljs-number">0</span>)
+<span class="hljs-atom">vis</span>
+<span class="hljs-atom">sett</span> [<span class="hljs-atom">distanse</span> <span class="hljs-atom">v</span>] <span class="hljs-atom">til</span> [<span class="hljs-number">10</span>]
+<span class="hljs-atom">gjenta</span> <span class="hljs-atom">til</span> &lt;(<span class="hljs-atom">distanse</span>) &lt; [<span class="hljs-number">1</span>]&gt;
+    <span class="hljs-atom">sett</span> <span class="hljs-atom">st</span>ø<span class="hljs-atom">rrelse</span> <span class="hljs-atom">til</span> ((<span class="hljs-number">150</span>) / (<span class="hljs-atom">distanse</span>)) <span class="hljs-comment">%</span>
+    <span class="hljs-atom">endre</span> [<span class="hljs-atom">distanse</span> <span class="hljs-atom">v</span>] <span class="hljs-atom">med</span> (-<span class="hljs-number">0.5</span>)
+    <span class="hljs-atom">vent</span> (<span class="hljs-number">0.1</span>) <span class="hljs-atom">sekunder</span>
+<span class="hljs-atom">slutt</span>
+<span class="hljs-atom">slett</span> <span class="hljs-atom">denne</span> <span class="hljs-atom">klonen</span>
+</code></pre>
+</li>
+<li>
+<figure>Det kan hende du må endre litt på tallene i skriptet over for at det
+skal se bra ut. Prøv deg frem!</figure>
+</li>
+</ul>
+</section>
+<section class="challenge" id="utfordring-gjennomsiktig-effekt">
+<h2 class="challenge" id="utfordring-gjennomsiktig-effekt">Utfordring: Gjennomsiktig effekt</h2>
+<p>Dette er ikke viktig for å kunne fortsette med spillet, men prøv hvis
+du vil. For at det skal se enda mer ut som at ringene først er langt
+borte og så nærme, så kan du bruke klossen</p>
+<pre><code class="language-blocks">sett <span class="hljs-string">[gjennomsiktig v]</span> effekt til ((<span class="hljs-number">100</span>)-((<span class="hljs-number">150</span>)/(distanse))
+</code></pre>
+<figure>for å gjøre ringene mer gjennomsiktig når de er langt borte. Hvilke
+tall må du putte i denne klossen for at det skal se bra ut?</figure>
+</section>
+</section>
+<section class="activity" id="steg-2-fa-ringene-til-a-dukke-opp-tilfeldige-steder">
+<h1 class="activity" id="steg-2-fa-ringene-til-a-dukke-opp-tilfeldige-steder">Steg 2: Få ringene til å dukke opp tilfeldige steder</h1>
+<p><em>For at spillet skal bli mest mulig utfordrende så burde ringene dukke
+opp på forskjellige steder hver gang.</em></p>
+<figure>Å først få dem til å dukke opp på forskjellige steder er ikke så
+vanskelig, men å få dem til å vokse på riktig måte er litt vrient.</figure>
+<section class="check" id="sjekkliste-3">
+<h2 class="check" id="sjekkliste-3">Sjekkliste</h2>
+<ul>
+<li>
+<p>Prøv først å endre på blokken som plasserer ring-klonene til</p>
+<pre><code class="language-blocks">gå til x: (tilfeldig tall fra (-100) til (100)) y: (tilfeldig tall fra (-100) til (100))
+</code></pre>
+<p>Det ser ganske bra ut, men ikke helt riktig, eller hva? Det er
+fordi <em>midtpunktet</em> til ringen er på samme sted hele tiden mens
+ringen er på vei mot deg. For at det skal se ut som at den suser
+<em>forbi deg</em> så må du hele tiden flytte på ringen mens den er på
+vei mot deg. For å få det til å fungere må ringklonen huske hvor
+den dukket opp til å begynne med.</p>
+</li>
+<li>
+<p>Lag variabler <code class="blockdata">ringX</code> og <code class="blockdata">ringY</code> som <em>kun
+gjelder for ringfiguren</em>.</p>
+</li>
+<li>
+<p>Erstatt blokken som først plasserer ringen med dette:</p>
+<pre><code class="language-blocks">sett [ringX v] <span class="hljs-keyword">til</span> (tilfeldig tall fra (-<span class="hljs-number">100</span>) <span class="hljs-keyword">til</span> (<span class="hljs-number">100</span>)
+sett [ringY v] <span class="hljs-keyword">til</span> (tilfeldig tall fra (-<span class="hljs-number">100</span>) <span class="hljs-keyword">til</span> (<span class="hljs-number">100</span>)
+gå <span class="hljs-keyword">til</span> <span class="hljs-attribute">x</span>: (ringX) <span class="hljs-attribute">y</span>: (ringY)
+</code></pre>
+<p>Forhåpentligvis har ikke oppførselen til ringene endret seg
+ennå. For å få midtpunktet til ringene til å flytte på seg mens
+ringene kommer mot deg kan du putte følgende blokk et sted inni
+løkken hvor ringen vokser:</p>
+<pre><code class="language-blocks">gå til x: <span class="hljs-comment">((ringX)</span> / <span class="hljs-comment">(distanse)</span>) y: <span class="hljs-comment">((ringY)</span> / <span class="hljs-comment">(distanse)</span>)
+</code></pre>
+</li>
+</ul>
+</section>
+<section class="flag" id="test-prosjektet-2">
+<h2 class="flag" id="test-prosjektet-2">Test prosjektet</h2>
+<p>Trykk på det grønne flagget. Nå burde det se ut som om ringene
+virkelig kommer mot deg! Nå kan du ta et pust i bakken og se over det
+du har skrevet så langt.</p>
+</section>
+</section>
+<section class="activity" id="steg-3-styr-en-flaksefigur-med-piltastene">
+<h1 class="activity" id="steg-3-styr-en-flaksefigur-med-piltastene">Steg 3: Styr en flaksefigur med piltastene</h1>
+<p><em>I neste del av dette kurset skal vi få en figur til å fly gjennom
+ringene. I dette steget skal vi lage den figuren, men ikke kode all
+flyveoppførselen dens.</em></p>
+<section class="check" id="sjekkliste-4">
+<h2 class="check" id="sjekkliste-4">Sjekkliste</h2>
+<ul>
+<li>
+<p>Lag en ny figur. Det er best om den er symmetrisk, slik at det kan
+se ut som om den flyr innover i skjermen uten at det ser teit ut,
+bruk for eksempel flaggermus-figuren. Kall den <strong>Flakse</strong>.</p>
+</li>
+<li>
+<p>Lag to nye variabler, <code class="blockdata">x</code> og <code class="blockdata">y</code>. La dem
+gjelde <em>for alle figurer</em>.</p>
+</li>
+<li>
+<p>Gi Flakse følgende skript:</p>
+<pre><code class="language-blocks"><span class="hljs-tag">n</span>å<span class="hljs-tag">r</span> <span class="hljs-tag">jeg</span> <span class="hljs-tag">mottar</span> <span class="hljs-attr_selector">[Nytt spill v]</span>
+<span class="hljs-tag">sett</span> <span class="hljs-attr_selector">[x v]</span> <span class="hljs-tag">til</span> <span class="hljs-attr_selector">[0]</span>
+<span class="hljs-tag">sett</span> <span class="hljs-attr_selector">[y v]</span> <span class="hljs-tag">til</span> <span class="hljs-attr_selector">[0]</span>
+<span class="hljs-tag">for</span> <span class="hljs-tag">alltid</span>
+    <span class="hljs-tag">hvis</span> &lt;<span class="hljs-tag">tast</span> <span class="hljs-attr_selector">[pil høyre v]</span> <span class="hljs-tag">trykket</span>&gt;
+        <span class="hljs-tag">endre</span> <span class="hljs-attr_selector">[x v]</span> <span class="hljs-tag">med</span> (10)
+        <span class="hljs-tag">vent</span> (0<span class="hljs-class">.05</span>) <span class="hljs-tag">sekunder</span>
+    <span class="hljs-tag">slutt</span>
+    <span class="hljs-tag">hvis</span> &lt;<span class="hljs-tag">tast</span> <span class="hljs-attr_selector">[pil venstre v]</span> <span class="hljs-tag">trykket</span>&gt;
+        <span class="hljs-tag">endre</span> <span class="hljs-attr_selector">[x v]</span> <span class="hljs-tag">med</span> (<span class="hljs-tag">-10</span>)
+        <span class="hljs-tag">vent</span> (0<span class="hljs-class">.05</span>) <span class="hljs-tag">sekunder</span>
+    <span class="hljs-tag">slutt</span>
+    <span class="hljs-tag">hvis</span> &lt;<span class="hljs-tag">tast</span> <span class="hljs-attr_selector">[pil opp v]</span> <span class="hljs-tag">trykket</span>&gt;
+        <span class="hljs-tag">endre</span> <span class="hljs-attr_selector">[y v]</span> <span class="hljs-tag">med</span> (10)
+        <span class="hljs-tag">vent</span> (0<span class="hljs-class">.05</span>) <span class="hljs-tag">sekunder</span>
+    <span class="hljs-tag">slutt</span>
+    <span class="hljs-tag">hvis</span> &lt;<span class="hljs-tag">tast</span> <span class="hljs-attr_selector">[pil ned v]</span> <span class="hljs-tag">trykket</span>&gt;
+        <span class="hljs-tag">endre</span> <span class="hljs-attr_selector">[y v]</span> <span class="hljs-tag">med</span> (<span class="hljs-tag">-10</span>)
+        <span class="hljs-tag">vent</span> (0<span class="hljs-class">.05</span>) <span class="hljs-tag">sekunder</span>
+    <span class="hljs-tag">slutt</span>
+<span class="hljs-tag">slutt</span>
+</code></pre>
+<p>Nå endres <code class="blockdata">x</code> og <code class="blockdata">y</code> når du styrer med
+piltastene. Vi venter litt inni hver <code class="blockcontrol">hvis</code>-test
+slik at <code class="blockdata">x</code> og <code class="blockdata">y</code> ikke plutselig vokser
+over alle grenser. Test gjerne hva som skjer dersom vi ikke venter.</p>
+</li>
+<li>
+<figure>Nå vil vi at posisjonen til ringene skal endre seg når vi
+styrer. Det kan vi få til ved å endre klossen</figure>
+<pre><code class="language-blocks">gå til x: <span class="hljs-comment">((ringX)</span> / <span class="hljs-comment">(distanse)</span>) y: <span class="hljs-comment">((ringY)</span> / <span class="hljs-comment">(distanse)</span>)
+</code></pre>
+<p>til dette:</p>
+<pre><code class="language-blocks">gå til x: <span class="hljs-comment">(((ringX)</span>-<span class="hljs-comment">(x)</span>) / <span class="hljs-comment">(distanse)</span>) y: <span class="hljs-comment">(((ringY)</span> - <span class="hljs-comment">(y)</span>) / <span class="hljs-comment">(distanse)</span>)
+</code></pre>
+<p>Ser det riktig ut nå? Nå er vi igrunn ferdig med det som trengs
+for å gå videre til del 2. I del 2 skal vi få det til å virke som
+om Flakse flakser når vi trykker på mellomromstasten, akkurat som
+i Flappy Bird og Flaksefugl. Prøv deg på disse utfordringene hvis
+du har mer tid igjen.</p>
+</li>
+</ul>
+</section>
+<section class="try" id="ting-a-prove">
+<h2 class="try" id="ting-a-prove">Ting å prøve</h2>
+<ul>
+<li>
+<p>Er det mulig å styre figuren gjennom alle ringene? Husk at spillet
+skal være akkurat passe vanskelig, og ihvertfall ikke umulig. Gå
+gjennom alle skriptene og endre på verdiene slik at spillet er gøy å
+spille, og slik at det ser bra ut. Kanskje du må endre på størrelsen
+til ringen, hvor mye ringene skal vokse, hvor mye <code>x</code> og <code>y</code> endrer
+seg når pilene trykkes, hvor lenge vi venter eller noen av de andre
+verdiene.</p>
+</li>
+<li>
+<p>Tegn din egen figur! Flaggermusfiguren er kanskje ikke helt
+perfekt. Prøv å se om du kan finne noen bilder på nettet du kan
+bruke, eller tegn din helt egen figur (den burde være et
+fugleliknende dyr). Husk at det ser mye bedre ut om figuren er
+symmetrisk. Det er lurt å gi figuren to drakter; en med vingene ned
+og en med vingene opp. Da kan vi senere få Flakse til å flakse!</p>
+</li>
+</ul>
+</section>
+</section>
+</div></div></div></div></div>
+<script type="text/javascript" src="/manifest.6ea44eeac19bc3e880c0.js"></script><script type="text/javascript" src="/vendor.6d5fa98442bff232d8d6.js"></script><script type="text/javascript" src="/main.effc9f6975558c5cacd0.js"></script><script type="text/javascript" src="/vendor2.d68392989297b87f74cc.js"></script></body>
+</html>

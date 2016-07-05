@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodeklubben (server)</title>
+    
+<link href="/vendor2.d68392989297b87f74cc.css" rel="stylesheet"></head>
+<body>
+    <div id="app"><div><div data-reactroot="" data-reactid="1" data-react-checksum="1567208099"><div style="background-color:#B1DAAE;border-radius:5px;height:40px;padding:5px;" data-reactid="2"><p data-reactid="3"><a href="/" data-reactid="4">Front Page</a><span data-reactid="5"><!-- react-text: 6 --> / <!-- /react-text --><a href="/scratch" data-reactid="7">scratch</a></span><span data-reactid="8"><!-- react-text: 9 --> / <!-- /react-text --><a href="/scratch/lag_ditt_eget_monster/monster-armer" class="active" data-reactid="10">monster-armer</a></span></p></div><div data-reactid="11"><h1 data-reactid="12"><!-- react-text: 13 -->Monster - Hengslede armer<!-- /react-text --><!-- react-text: 14 --> - Level <!-- /react-text --></h1><p data-reactid="15"><i data-reactid="16"><!-- react-text: 17 -->av <!-- /react-text --><!-- react-text: 18 -->Oversatt fra [Code Club UK](//codeclub.org.uk)<!-- /react-text --></i></p><div data-reactid="19"><section class="check" id="sjekkliste">
+<h2 class="check" id="sjekkliste">Sjekkliste</h2>
+<ul>
+<li>
+<p>En arm lages av to figurer, og de kan være ganske vanskelige å
+bygge, siden de to armene må vite om hverandre, slik at de ikke
+skilles og det blir seende rart ut. Dette kan gjøres med matematiske
+beregninger som kalles <strong>trigonometri</strong>, noe som regelmessig brukes
+i produksjon av dataspill, roboter og andre kule teknologier. Armens
+første figur er overarmen, som ikke er så vanskelig, da den ganske
+enkelt vil rotere ved skulderen og flytte seg med kroppen og de
+andre kroppsdelene. En ting vi må legge til er å sette retningen
+<code class="blockmotion">retning</code> til armen i en variabel (mer om det
+seinere).</p>
+<pre><code class="language-blocks">når <span class="hljs-string">[mellomrom v]</span> trykkes
+vend venstre (<span class="hljs-number">15</span>) grader
+sett <span class="hljs-string">[venstre arm v]</span> til (retning)
+send melding <span class="hljs-string">[flyttet v]</span>
+endre x med (hastighet)
+</code></pre>
+</li>
+<li>
+<p>Den neste beregningen brukes for å kontrollere <strong>underarmen</strong>. Her
+bruker vi trigonometri for å beregne hvor underarmen bør plasseres
+(Det kan godt være at du trenger å be om hjelp når du skal gjøre
+dette).</p>
+<pre><code class="language-blocks">når jeg mottar <span class="hljs-string">[flyttet v]</span>
+gå til <span class="hljs-string">[Sprite3 v]</span>
+gå til x: ((x-posisjon) + ((<span class="hljs-number">45</span>) * (<span class="hljs-string">[sin v]</span> av (venstre arm)))) y: ((y-position) + ((<span class="hljs-number">45</span>) * (<span class="hljs-string">[cos v]</span> av (venstre arm))))
+</code></pre>
+</li>
+<li>
+<p>Først oppdaterer armen seg, når meldingen <code class="blockbrown">flyttet</code>
+blir sendt, men du kan bruke hvilken som helst melding, så lenge
+overarmen sender den eller flytter seg til samme medling som
+underarmen.</p>
+</li>
+<li>
+<p>Så flytter underarmen seg selv til <strong>senterpunktet</strong> av overarmen,
+dette er punktet hvor toppen av overarmen er festet til
+skulderen. Vi vil så flytte underarmen slik at den møter
+overarmen. Tenk deg at vi tegner en sirkel mens overarmen roterer
+rundt skulderen, hva er så radius på den sirkelen? Armen i dette
+eksempelet er circa <strong>45 pixler</strong> lang. Vi trenger å finne ut hva
+punktet i den andre enden av armen er, og posisjonerer underarmen
+vår der. Man kan bruke trigonometri formelen over for å
+reposisjonere underarmen og lage en albue.</p>
+</li>
+</ul>
+</section>
+</div></div></div></div></div>
+<script type="text/javascript" src="/manifest.6ea44eeac19bc3e880c0.js"></script><script type="text/javascript" src="/vendor.6d5fa98442bff232d8d6.js"></script><script type="text/javascript" src="/main.effc9f6975558c5cacd0.js"></script><script type="text/javascript" src="/vendor2.d68392989297b87f74cc.js"></script></body>
+</html>
